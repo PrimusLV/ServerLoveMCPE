@@ -1,0 +1,33 @@
+  name: ServerLove
+main: ServerLove\Main
+version: 1.3.0
+api: [1.10.0]
+load: POSTWORLD
+author: TheDeibo
+description: Add a little romance to your server!
+commands:
+ serverlove:
+  description: §aDisplays Plugin Infomation
+  usage: "§a/serverlove."
+  aliases: [sl, loveserver]
+  permission: serverlove.serverlove
+ love:
+  description: §a Love a player
+  usage: "§a/love <playerName>"
+  aliases: [l, fancy, marry, propose]
+  permission: serverlove.love
+ nolove:
+  description: §aToggle if you want to / dont want to love.
+  usage: "§a/nolove <nolove | love>"
+  aliases: [nl]
+  permission: serverlove.nolove
+permissions:
+ serverlove.serverlove:
+  description: "§aDisplays Plugin Infomation"
+  default: true
+ serverlove.love:
+  description: "§aAllows the user to love another player"
+  default: true
+ serverlove.nolove:
+  description: "§aAllows the user to be / not to be loved."
+  default: true

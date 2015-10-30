@@ -1,6 +1,6 @@
-  name: ServerLove
-main: ServerLove\Main
-version: 1.3.0
+name: ServerLove
+main: ServerLoveMCPE\Main
+version: 1.4.0
 api: [1.10.0]
 load: POSTWORLD
 author: TheDeibo
@@ -9,7 +9,7 @@ commands:
  serverlove:
   description: §aDisplays Plugin Infomation
   usage: "§a/serverlove."
-  aliases: [sl, loveserver]
+  aliases: [sl, loveserver, serverlovemcpe, slmcpe]
   permission: serverlove.serverlove
  love:
   description: §a Love a player

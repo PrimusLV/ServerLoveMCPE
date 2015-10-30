@@ -79,7 +79,7 @@ class Main extends PluginBase {
                     return false;
                 }
             break;
-            case "ServerLoveMCPE":
+            case "ServerLove":
                 $sender->sendMessage("§5[ServerLoveMCPE] ServerLoveMCPE is a plugin that brings a little love to a server. ");
                 $sender->sendMessage("§d[ServerLoveMCPE] ServerLoveMCPE ( For MCPE) Made By TheDeibo ");
                 $sender->sendMessage("§5[ServerLoveMCPE] Original ServerLove (For MCPC )  Made By ratchetgame98 ");

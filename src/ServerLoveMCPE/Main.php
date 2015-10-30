@@ -1,28 +1,45 @@
 <?php
 namespace ServerLoveMCPE;
+
+use pocketmine\plugin\PluginBase;
+
+use ServerLoveMCPE\handler\EventListener;
+
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\command\CommandExecutor;
-use pocketmine\event\Listener;
-use pocketmine\Player;
-use pocketmine\plugin\PluginBase;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 use pocketmine\utils\Config;
-class Main extends PluginBase implements Listener{
-    public function onEnable(){
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
+
+use pocketmine\Player;
+use pocketmine\IPlayer;
+
+class Main extends PluginBase {
+    
+    public function onEnable()
+    {
+        $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
         @mkdir($this->getDataFolder());
         $this->nolove = new Config($this->getDataFolder()."nolove.txt", Config::ENUM);
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->saveDefaultConfig();
-        $this->getLogger()->info(TextFormat::RED . " Yayyy, ServerLoveMCPE is ready for love on Version 1.3.0!");
+        $this->getLogger()->info(TextFormat::RED . " Yayyy, ServerLoveMCPE is ready for love on Version ".$this->getDescription()->getVersion());
     }
-    public function onDisable(){
+    
+    public function onDisable()
+    {
         $this->nolove->save();
     }
+    
+    /**
+     * @param CommandSender $sender
+     * @param Command $command
+     * @param string $label
+     * @param array $args
+     * 
+     * @return bool
+     */
     public function onCommand(CommandSender $sender, Command $command, $label, array $args){
-        switch($command->getName()){
+        switch(strtolower($command->getName()){
             case "love":
                 if(!(isset($args[0]))){
                     return false;
@@ -76,4 +93,67 @@ class Main extends PluginBase implements Listener{
         }
     return false;
     }
+    // TODO Remove onCommand() and use $commandMap->registerCommand()
+    
+    
+    /**      ___       ______    __  
+    *       /   \     |   _  \  |  | 
+    *      /  ^  \    |  |_)  | |  | 
+    *     /  /_\  \   |   ___/  |  | 
+    *    /  _____  \  |  |      |  | 
+    *   /__/     \__\ | _|      |__| 
+    */
+    
+    /**
+     * @param IPlayer $player
+     * 
+     * @return bool
+     */
+    public function isMarried(IPlayer $player)
+    {
+     // TODO    
+    }
+    
+    /**
+     * @param IPlayer $player
+     * 
+     * @return IPlayer|null
+     */
+    public function getMarriagePartner(IPlayer $player){
+        // TODO
+    }
+    /**
+     * @param IPlayer $wife
+     * @param IPlayer $husband
+     * @description Returns true on success, false on fail
+     * 
+     * @return bool
+     */
+    public function merry(IPlayer $wife, IPlayer $husband)
+    {
+     // TODO
+    }
+    
+    /**
+     * @param IPlayer $player
+     * @description Returns true if $player is dating someone or false if not are is married
+     * 
+     * @return bool
+     */
+    public function isDating(IPlayer $player)
+    {
+     // TODO
+    }
+    
+    /**
+     * @param IPlayer $player
+     * 
+     * @return IPlayer|null
+     */
+    public function getDatePartner(IPlayer $player)
+    {
+     // TODO
+     // Better name
+    }
+    
 }

@@ -46,19 +46,19 @@ class Main extends PluginBase {
                 }
                 $loved = array_shift($args);
                 if($this->nolove->exists(strtolower($loved))){
-                    $sender->sendMessage("§5 You can't love " . $loved . " §5  GET OVER IT");
+                    $sender->sendMessage("§5 Sorry," . $loved . " §5  is not interested in you.");
                     return true;
                 }else{
                     $lovedPlayer = $this->getServer()->getPlayer($loved);
                     if($lovedPlayer !== null and $lovedPlayer->isOnline()){
-                        $lovedPlayer->sendMessage($sender->getName()."§5 is your lover lover!");
+                        $lovedPlayer->sendMessage($sender->getName()."§5 is in love with you!");
                         if(isset($args[0])){
                             $lovedPlayer->sendMessage("Reason: " . implode(" ", $args));
                         }
-                        $sender->sendMessage("§5Wait till everyone finds out you LOVE " . $loved . " §dTheys gonna be like, I KNEW IT");
+                        $sender->sendMessage("§5So you love " . $loved . "?§5 Awww, thats nice.");
                         return true;
                     }else{
-                        $sender->sendMessage($loved . "§5 is not avalible for love. #shameful. §4 HA YOUR NOW A LONER!");
+                        $sender->sendMessage($loved . "§5 is not avalible for love. #shameful. §5 Basically, " . $loved . " §5is not interested in you.");
                         return true;
                     }
                 }
@@ -79,10 +79,10 @@ class Main extends PluginBase {
                     return false;
                 }
             break;
-            case "ServerLove":
+            case "serverlove":
                 $sender->sendMessage("§5[ServerLoveMCPE] ServerLoveMCPE is a plugin that brings a little love to a server. ");
-                $sender->sendMessage("§d[ServerLoveMCPE] ServerLoveMCPE ( For MCPE) Made By TheDeibo ");
                 $sender->sendMessage("§5[ServerLoveMCPE] Original ServerLove (For MCPC )  Made By ratchetgame98 ");
+                $sender->sendMessage(" ");
                 $sender->sendMessage("§d[ServerLoveMCPE] Usage: /love <playerName>");
                 $sender->sendMessage("§5[ServerLoveMCPE] Usage: /nolove <nolove|love> ");
                 $sender->sendMessage("§d[ServerLoveMCPE] Happy Loving!");

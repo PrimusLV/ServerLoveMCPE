@@ -1,6 +1,6 @@
-name: ServerLove
+name: ServerLoveMCPE
 main: ServerLoveMCPE\Main
-version: 1.4.0
+version: 1.5.0
 api: [1.10.0]
 load: POSTWORLD
 author: TheDeibo
@@ -9,25 +9,25 @@ commands:
  serverlove:
   description: §aDisplays Plugin Infomation
   usage: "§a/serverlove."
-  aliases: [sl, loveserver, serverlovemcpe, slmcpe]
-  permission: serverlove.serverlove
+  aliases: [sl, loveserver]
+  permission: serverlovemcpe.serverlove
  love:
   description: §a Love a player
   usage: "§a/love <playerName>"
   aliases: [l, fancy, marry, propose]
-  permission: serverlove.love
+  permission: serverlovemcpe.love
  nolove:
   description: §aToggle if you want to / dont want to love.
   usage: "§a/nolove <nolove | love>"
   aliases: [nl]
-  permission: serverlove.nolove
+  permission: serverlovemcpe.nolove
 permissions:
- serverlove.serverlove:
+ serverlovemcpe.serverlove:
   description: "§aDisplays Plugin Infomation"
   default: true
- serverlove.love:
+ serverlovemcpe.love:
   description: "§aAllows the user to love another player"
   default: true
- serverlove.nolove:
+ serverlovemcpe.nolove:
   description: "§aAllows the user to be / not to be loved."
   default: true

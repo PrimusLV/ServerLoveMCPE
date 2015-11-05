@@ -56,6 +56,7 @@ class Main extends PluginBase {
                             $lovedPlayer->sendMessage("Reason: " . implode(" ", $args));
                         }
                         $sender->sendMessage("§5So you love " . $loved . "?§5 Awww, thats nice.");
+                        $this->getServer()->broadcastMessage("§a" . $sender->getName() . " §5is in love with §a" . $loved . "§5.");
                         return true;
                     }else{
                         $sender->sendMessage($loved . "§5 is not avalible for love. #shameful. §5 Basically, " . $loved . " §5is not interested in you.");

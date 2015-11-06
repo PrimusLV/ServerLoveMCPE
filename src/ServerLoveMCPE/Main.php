@@ -23,11 +23,21 @@ class Main extends PluginBase {
         $this->nolove = new Config($this->getDataFolder()."nolove.txt", Config::ENUM);
         $this->saveDefaultConfig();
         $this->getLogger()->info(TextFormat::RED . " Yayyy, ServerLoveMCPE is ready for love on Version ".$this->getDescription()->getVersion());
+    
+        $this->registerCommands();
+        
     }
     
     public function onDisable()
     {
         $this->nolove->save();
+    }
+    
+    private function registerCommands(){
+        $commandMap = $this->getServer()->getCommandMap();
+        
+        $commandMap->register('love', new LoveCommand($this, 'love', '__DESCRIPTION', ['lov', 'luv']), null);
+        $commandMap->register('nolove', new NoLoveCommand($this, 'nolove', '__DESCRIPTION', ['nl', 'nol', 'nlove']), null);
     }
     
     /**

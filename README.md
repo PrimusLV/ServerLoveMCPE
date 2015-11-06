@@ -11,7 +11,7 @@ https://github.com/ratchetgame98/ServerLove
 
 Click here to see the [WIKI!](https://github.com/thedeibo/ServerLoveMCPE/wiki/)
 Or join the Chat
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/thedeibo/ServerLoveMCPE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/thedeibo/ServerLoveMCPE-CHAT?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 
 
